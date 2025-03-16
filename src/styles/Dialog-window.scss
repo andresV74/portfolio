@@ -1,0 +1,125 @@
+@use 'mixins';
+
+.dialog {
+	@include mixins.box-layout;
+
+	box-shadow:
+		0 0 20px 0px rgb(149 184 219 / 30%),
+		0 0 30px 0px rgb(149 184 219 / 20%),
+		0 0 40px 0px rgb(149 184 219 / 10%);
+	border: 1px solid var(--light-blue);
+	margin: auto;
+	opacity: 0;
+	padding-bottom: 1.25rem;
+	transform: rotate(-45deg) scale(0);
+	transition: all 0.6s allow-discrete;
+
+	@include mixins.responsive(md) {
+		max-width: 80%;
+	}
+
+	&::backdrop {
+		background-color: var(--dark-bg);
+		opacity: 0;
+		transition: all 0.6s allow-discrete;
+	}
+
+	&:open::backdrop {
+		background-color: var(--dark-bg);
+		opacity: 0.8;
+	}
+
+	@starting-style {
+		&:open::backdrop {
+			background-color: var(--dark-bg) / 0%;
+			opacity: 0;
+		}
+	}
+
+	&__header {
+		background-color: var(--dark-blue);
+		border-radius: 12px;
+		margin: auto;
+		padding-block: 1.875rem 1.25rem;
+		width: calc(100% - 2px);
+	}
+
+	&__close {
+		background-color: transparent;
+		border: none;
+		color: var(--text-color);
+		cursor: pointer;
+		font-size: 1.8rem;
+		position: absolute;
+		right: 1rem;
+		top: 1.65rem;
+
+		&:hover {
+			color: #fff;
+		}
+
+		@include mixins.responsive(md) {
+			right: 1.8rem;
+			top: 1.8rem;
+		}
+	}
+
+	&__title {
+		font-size: 1.25rem;
+		text-align: center;
+
+		@include mixins.responsive(md) {
+			font-size: 1.75rem;
+		}
+	}
+
+	&__content {
+		font-size: 1rem;
+		line-height: 1.2;
+		overflow: scroll;
+		padding-inline: 1.25rem;
+
+		@include mixins.responsive(md) {
+			font-size: 1.25rem;
+			line-height: 1.4;
+			padding-inline: 1.8rem;
+		}
+
+		.title {
+			color: var(--text-hover-color);
+			margin-block: 1.5rem 1rem;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		.paragraph {
+			margin-bottom: 1rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.link {
+			color: var(--text-color);
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&:open {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+	}
+
+	@starting-style {
+		&:open {
+			opacity: 0;
+			transform: rotate(-45deg) scale(0);
+		}
+	}
+}

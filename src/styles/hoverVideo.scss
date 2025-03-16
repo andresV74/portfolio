@@ -1,0 +1,42 @@
+@use 'mixins';
+
+.video {
+	display: none;
+
+	&.visible {
+		.empty-box {
+			display: none;
+		}
+
+		video {
+			display: block;
+		}
+	}
+
+	video {
+		border-radius: var(--border-radius);
+		display: none;
+		filter: saturate(0.5) opacity(0.6);
+		height: 100%;
+		width: 100%;
+	}
+
+	@include mixins.responsive(lg) {
+		display: block;
+
+		&.about-me {
+			grid-column: 2 / 3;
+			grid-row: 3 / 4;
+		}
+
+		&.experience {
+			grid-column: 4 / 5;
+			grid-row: 3 / 4;
+		}
+
+		&.knowledge {
+			grid-column: 3 / 4;
+			grid-row: 4 / 5;
+		}
+	}
+}

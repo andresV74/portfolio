@@ -1,0 +1,113 @@
+@use 'mixins';
+
+.marquee {
+	align-content: end;
+	grid-column: 1 / 3;
+	grid-row: 1 / 2;
+	overflow: hidden;
+	position: relative;
+
+	&__subtitle {
+		animation: marquee 20s infinite linear forwards;
+		animation-play-state: running;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		white-space: nowrap;
+
+		&.paused {
+			animation-play-state: paused;
+		}
+	}
+
+	&__pause-button {
+		align-items: center;
+		appearance: none;
+		background: var(--text-color);
+		border: none;
+		border-radius: 50px;
+		bottom: 2px;
+		color: var(--dark-bg);
+		cursor: pointer;
+		display: flex;
+		font-size: 1.2rem;
+		height: 30px;
+		justify-content: center;
+		line-height: 1;
+		position: absolute;
+		right: 2px;
+		width: 30px;
+	}
+
+	@include mixins.responsive(md) {
+		transform: rotate(90deg) translate(84px, 84px);
+
+		&__subtitle {
+			animation: marqueeMd 20s infinite linear forwards;
+			font-size: 2.125rem;
+		}
+
+		&__pause-button {
+			bottom: 8px;
+			font-size: 1.5rem;
+			height: 40px;
+			right: 5px;
+			width: 40px;
+		}
+	}
+
+	@include mixins.responsive(lg) {
+		transform: rotate(90deg) translate(90px, 90px);
+
+		&__pause-button {
+			opacity: 0.3;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	@include mixins.responsive(xl) {
+		transform: rotate(90deg) translate(125px, 125px);
+
+		&__subtitle {
+			animation: marqueeXl 20s infinite linear forwards;
+			font-size: 3rem;
+			line-height: 1.3;
+		}
+
+		&__pause-button {
+			font-size: 1.5rem;
+			height: 40px;
+			right: 5px;
+			width: 40px;
+		}
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-734px);
+	}
+}
+
+@keyframes marqueeMd {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-1040px);
+	}
+}
+
+@keyframes marqueeXl {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-1470px);
+	}
+}

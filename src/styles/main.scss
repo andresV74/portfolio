@@ -1,0 +1,78 @@
+@use 'mixins';
+
+// Variables
+:root {
+  --text-color: hsl(218, 34%, 75%);
+  --text-hover-color: hsl(188, 100%, 50%);
+  --light-bg: hsl(0, 0%, 96%);
+  --dark-bg: hsl(221, 28%, 10%);
+  --dark-blue: #161c29;
+	--light-blue: #95b8db;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1.25rem;
+  --border-radius: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+// Grid system
+.grid {
+  display: grid;
+  gap: var(--spacing-sm);
+    grid-template-columns: repeat(2, 160px);
+    grid-template-rows: repeat(4, 160px);
+
+  @include mixins.responsive(sm) {
+    grid-template-columns: repeat(4, 160px);
+    grid-template-rows: repeat(4, 160px);
+  }
+
+  @include mixins.responsive(lg) {
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(5, 160px);
+    grid-template-rows: repeat(4, 160px);
+  }
+
+  @include mixins.responsive(xl) {
+    grid-template-columns: repeat(5, 230px);
+    grid-template-rows: repeat(4, 230px);
+  }
+}
+
+.portfolio {
+  @include mixins.flex-center;
+
+  height: 100dvh;
+  overflow: hidden;
+
+  &__grid {
+    margin: auto;
+    max-width: 980px;
+
+    @include mixins.responsive(lg) {
+      transform:
+        rotate(-45deg)
+        translate(40px, 50px);
+    }
+
+    @include mixins.responsive(xl) {
+      transform:
+        rotate(-45deg)
+        translate(-20px, 20px);
+    }
+  }
+}
+
+// Dark mode example
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg);
+    color: white;
+  }
+}
