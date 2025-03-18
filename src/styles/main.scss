@@ -14,11 +14,11 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
   font-size: 1rem;
   line-height: 1;
   color: var(--text-color);
-  background-color: var(--light-bg);
+  background-color: var(--dark-bg);
 }
 
 // Grid system
@@ -70,9 +70,9 @@ body {
 }
 
 // Dark mode example
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg);
-    color: white;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     background-color: var(--dark-bg);
+//     color: white;
+//   }
+// }

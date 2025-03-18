@@ -14,8 +14,26 @@
 	transform: rotate(-45deg) scale(0);
 	transition: all 0.6s allow-discrete;
 
+	// Safari only
+	@supports (-webkit-appearance:none) and (stroke-color:transparent) {
+		opacity: unset;
+		transform: unset;
+	}
+
 	@include mixins.responsive(md) {
 		max-width: 80%;
+	}
+
+	&:open {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+	}
+
+	@starting-style {
+		&:open {
+			opacity: 0;
+			transform: rotate(-45deg) scale(0);
+		}
 	}
 
 	&::backdrop {
@@ -108,18 +126,6 @@
 			&:hover {
 				text-decoration: none;
 			}
-		}
-	}
-
-	&:open {
-		opacity: 1;
-		transform: rotate(0deg) scale(1);
-	}
-
-	@starting-style {
-		&:open {
-			opacity: 0;
-			transform: rotate(-45deg) scale(0);
 		}
 	}
 }
