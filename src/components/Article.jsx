@@ -8,7 +8,7 @@ function Article({ id, title, content, setHover }) {
 	const [titleClasses, setTitleClasses] = useState('article__title');
 	const [target, setTarget] = useState(null);
 
-	const showDialogWindow = (event) => {
+	const hideTitle = (event) => {
 		setTitleClasses(titleClasses + ' hidden');
 		setHover(id, false);
 		setTarget(event.target);
@@ -33,7 +33,7 @@ function Article({ id, title, content, setHover }) {
 					className="article__button major-mono"
 					onMouseEnter={() => setHover(id, true)}
 					onMouseLeave={() => setHover(id, false)}
-					onClick={showDialogWindow}>
+					onClick={hideTitle}>
 					{ title }
 				</button>
 			</h3>

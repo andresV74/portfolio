@@ -2,8 +2,8 @@ import aboutMe from './videos/about_me.mp4';
 import experience from './videos/experience.mp4';
 import knowledge from './videos/skills.mp4';
 
-export const data = {
-  aboutMe: {
+export const data = [
+  {
     id: 'about-me',
     title: 'About me',
     videoSrc: aboutMe,
@@ -18,7 +18,7 @@ export const data = {
       },
     ],
   },
-  experience: {
+  {
     id: "experience",
     title: "experience",
     videoSrc: experience,
@@ -53,7 +53,7 @@ export const data = {
       },
     ],
   },
-  knowledge: {
+  {
     id: "knowledge",
     title: "knowledge",
     videoSrc: knowledge,
@@ -115,4 +115,4 @@ export const data = {
       },
     ],
   },
-}
+]
