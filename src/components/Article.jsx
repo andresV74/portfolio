@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import DialogWindow from './Dialog-window.jsx';
+import DialogWindow from './DialogWindow.jsx';
 import '../styles/Article.scss';
 
 function Article({ id, title, content, setHover }) {
