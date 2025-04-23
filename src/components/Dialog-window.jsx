@@ -7,12 +7,10 @@ function DialogWindow({dialogWindow, showTitle, title, content}) {
 		<dialog
 			className="dialog"
 			ref={dialogWindow}>
-			<header className="dialog__header">
-				<button className="dialog__close" onClick={showTitle}>
-					<MdClose />
-				</button>
-				<h3 className="dialog__title major-mono">{ title }</h3>
-			</header>
+			<button className="dialog__close" onClick={showTitle}>
+				<MdClose />
+			</button>
+			<h3 className="dialog__title major-mono">{ title }</h3>
 			<div className="dialog__content ubuntu-mono">
 				{
 					content.map(({ paragraph, isTitle, link, index }) => {

@@ -10,9 +10,13 @@
 	border: 1px solid var(--light-blue);
 	margin: auto;
 	opacity: 0;
-	padding-bottom: 1.25rem;
+	padding: 1.875rem 1.25rem 1.25rem;
 	transform: rotate(-45deg) scale(0);
 	transition: all 0.6s allow-discrete;
+
+	@include mixins.responsive(md) {
+		padding-inline: 1.8rem;
+	}
 
 	// Safari only
 	@supports (-webkit-appearance:none) and (stroke-color:transparent) {
@@ -54,14 +58,6 @@
 		}
 	}
 
-	&__header {
-		background-color: var(--dark-blue);
-		border-radius: 12px;
-		margin: auto;
-		padding-block: 1.875rem 1.25rem;
-		width: calc(100% - 2px);
-	}
-
 	&__close {
 		background-color: transparent;
 		border: none;
@@ -84,6 +80,7 @@
 
 	&__title {
 		font-size: 1.25rem;
+		padding-bottom: 1.25rem;
 		text-align: center;
 
 		@include mixins.responsive(md) {
@@ -94,13 +91,10 @@
 	&__content {
 		font-size: 1rem;
 		line-height: 1.2;
-		overflow: scroll;
-		padding-inline: 1.25rem;
 
 		@include mixins.responsive(md) {
 			font-size: 1.25rem;
 			line-height: 1.4;
-			padding-inline: 1.8rem;
 		}
 
 		.title {
