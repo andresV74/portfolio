@@ -107,7 +107,7 @@ export const data = [
       },
       {
         index: 13,
-        paragraph: "English C1 level",
+        paragraph: "English B2 level",
       },
     ],
   },
