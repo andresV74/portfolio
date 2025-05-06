@@ -54,8 +54,13 @@
 	&:nth-child(6) {
 		display: none;
 
-		@include mixins.responsive(md) {
+		@include mixins.responsive(sm) {
 			display: block;
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+		}
+
+		@include mixins.responsive(md) {
 			grid-column: 4 / 5;
 			grid-row: 2 / 3;
 		}

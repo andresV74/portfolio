@@ -29,6 +29,11 @@ body {
     grid-template-rows: repeat(4, 160px);
 
   @include mixins.responsive(sm) {
+    grid-template-columns: repeat(3, 160px);
+    grid-template-rows: repeat(4, 160px);
+  }
+
+  @include mixins.responsive(md) {
     grid-template-columns: repeat(4, 160px);
     grid-template-rows: repeat(4, 160px);
   }

@@ -10,7 +10,7 @@ function App() {
       <div className="portfolio__grid grid">
         <EmptyBoxes />
         <Header />
-        <Marquee text="UI Engineer / Frontend Developer / Web Developer / UI Engineer / Frontend" />
+        <Marquee text="UI Engineer / Frontend Developer / Visual Designer / UI Engineer / Frontend Developer" />
         {
           data.map((article) => (
             <FullArticle

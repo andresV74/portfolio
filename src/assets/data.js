@@ -10,7 +10,7 @@ export const data = [
 		content: [
       {
         index: 1,
-        paragraph: "I am  a Visual Designer and a Frontend Developer and  I have honed my skills in web development for more than 5 years, specializing in frontend technologies like Javascript, React, HTML, CSS, Git & Github among others."
+        paragraph: "I am  a Visual Designer and a Frontend Developer from Manizales, Colombia and  I have honed my skills in web development for more than 5 years, specializing in frontend technologies like JavaScript, TypeScript, React, Astro, HTML, CSS, SASS, Tailwind, Git & Github among others."
       },
       {
         index: 2,
@@ -65,27 +65,23 @@ export const data = [
       },
       {
         index: 2,
-        paragraph: "Javascript - (React)",
+        paragraph: "JavaScript - TypeScript - React",
       },
       {
         index: 3,
-        paragraph: "HTML5",
+        paragraph: "Astro",
       },
       {
         index: 4,
-        paragraph: "CSS3 - (SASS, LESS, Stylus)",
+        paragraph: "HTML5",
       },
       {
         index: 5,
-        paragraph: "Django templates",
-      },
-      {
-        index: 6,
-        paragraph: "Git & GitHub",
+        paragraph: "CSS3 - SASS - Tailwind",
       },
       {
         index: 7,
-        paragraph: "Portable Object files (for different locale languages)",
+        paragraph: "Git & GitHub",
       },
       {
         index: 8,
