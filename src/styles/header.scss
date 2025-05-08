@@ -17,7 +17,7 @@
 		color: var(--text-color);
 		font-size: 1.8rem;
 		line-height: 1.2;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 		text-align: center;
 
 		@include mixins.responsive(md) {
@@ -34,12 +34,41 @@
 		}
 	}
 
+	.description {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 0.3rem;
+
+		@include mixins.responsive(md) {
+			padding-left: 0.7rem;
+		}
+	}
+
+	.subtitle {
+		color: var(--text-color);
+		font-size: 1.2rem;
+		line-height: 1;
+
+		@include mixins.responsive(md) {
+			font-size: 1.4rem;
+		}
+
+		@include mixins.responsive(xl) {
+			font-size: 2rem;
+		}
+	}
+
 	.links {
 		display: flex;
 		gap: 1rem;
 		justify-content: flex-end;
 		list-style: none;
 		padding-right: 0.5rem;
+
+		li {
+			height: fit-content;
+		}
 	}
 
 	.link,
@@ -47,8 +76,6 @@
 	.link:visited {
 		color: var(--text-color);
 		display: block;
-		font-size: 1.5rem;
-		line-height: 1;
 		transition: all 0.2s;
 
 		&:hover {

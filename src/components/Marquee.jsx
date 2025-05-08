@@ -17,7 +17,7 @@ function Marquee({ text }) {
 	}
 	return(
 		<div className="marquee">
-			<h2 className={ subtitleClassName }>{ text }</h2>
+			<h3 className={ subtitleClassName }>{ text }</h3>
 			<button className="marquee__pause-button" onClick={ handleClick }>
 				{ iconButton}
 			</button>

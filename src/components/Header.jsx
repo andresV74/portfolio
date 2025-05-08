@@ -9,11 +9,14 @@ function Header() {
 	return (
 		<header className='portfolio__header'>
 			<h1 className="title major-mono">Andres Valencia</h1>
-			<ul className='links'>
-				<Link link='mailto:andres.valencia74@icloud.com'  icon={mailIcon} />
-				<Link link='https://www.linkedin.com/in/andresvalenciaa/'  icon={linkedInIcon} />
-				<Link link='https://github.com/andresV74/'  icon={gitHubIcon} />
-			</ul>
+			<div className="description">
+				<h2 className="subtitle major-mono">portfolio</h2>
+				<ul className='links'>
+					<Link link='mailto:andres.valencia74@icloud.com'  icon={mailIcon} />
+					<Link link='https://www.linkedin.com/in/andresvalenciaa/'  icon={linkedInIcon} />
+					<Link link='https://github.com/andresV74/'  icon={gitHubIcon} />
+				</ul>
+			</div>
 		</header>
 	)
 }
